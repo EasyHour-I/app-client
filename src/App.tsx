@@ -1,9 +1,14 @@
 import './App.scss';
+import { Button } from './components/Button';
 
 function App() {
     return (
         <>
-            <h1>hello world</h1>
+            <Button
+                text="primary-icon"
+                color="primary"
+                icon="settings"
+            ></Button>
         </>
     );
 }

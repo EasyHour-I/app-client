@@ -1,0 +1,182 @@
+@import 'src/styles/variables-keys';
+
+@mixin button($bg-color, $color) {
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 4rem;
+
+    background-color: $bg-color;
+    color: $color;
+
+    transition: color 0.25s, background-color 0.25s;
+
+    &.small {
+        padding: 0.5rem 1rem;
+    }
+}
+
+@mixin icon($icon, $color) {
+    > span::after {
+        font-size: 2rem;
+        content: $icon;
+        color: $color;
+
+        transition: color 0.25s;
+    }
+
+    &.small > span::after {
+        font-size: 1.5rem;
+    }
+}
+
+@mixin regularButton(
+    $bg-color,
+    $color,
+    $bg-hover: $bg-color,
+    $color-hover: $color
+) {
+    @include button($bg-color, $color);
+
+    &:hover {
+        background-color: $bg-hover;
+        color: $color-hover;
+    }
+}
+
+@mixin iconButton(
+    $icon,
+    $bg-color,
+    $color,
+    $bg-hover: $bg-color,
+    $color-hover: $color
+) {
+    @include button($bg-color, $color);
+    @include icon($icon, $color);
+
+    padding: 0.75rem;
+
+    &.small {
+        padding: 0.5rem;
+    }
+
+    &:hover {
+        background-color: $bg-hover;
+
+        @include icon($icon, $color-hover);
+    }
+}
+
+@mixin textIconButton(
+    $icon,
+    $bg-color,
+    $color,
+    $icon-color,
+    $bg-hover: $bg-color,
+    $color-hover: $color
+) {
+    @include button($bg-color, $color);
+    @include icon($icon, $icon-color);
+
+    padding: 0.75rem 3.5rem;
+
+    &:hover {
+        background-color: $bg-hover;
+        color: $color-hover;
+
+        @include icon($icon, $color-hover);
+    }
+}
+
+.primary {
+    @include regularButton(
+        var($primary-500),
+        var($primary-100),
+        var($primary-600)
+    );
+}
+
+.primary_icon {
+    @include iconButton(
+        attr(data-icon),
+        var($primary-500),
+        var($primary-100),
+        var($primary-600)
+    );
+}
+
+.primary_text_icon {
+    @include textIconButton(
+        attr(data-icon),
+        var($primary-500),
+        var($primary-200),
+        var($primary-100),
+        var($primary-600),
+        var($primary-100)
+    );
+}
+
+.secondary {
+    @include regularButton(
+        var($primary-100),
+        var($primary-500),
+        var($primary-200),
+        var($primary-600)
+    );
+}
+
+.secondary_icon {
+    @include iconButton(
+        attr(data-icon),
+        var($primary-100),
+        var($primary-500),
+        var($primary-200),
+        var($primary-600)
+    );
+}
+
+.secondary_text_icon {
+    @include textIconButton(
+        attr(data-icon),
+        var($primary-100),
+        var($primary-400),
+        var($primary-500),
+        var($primary-200),
+        var($primary-600)
+    );
+}
+
+.accent {
+    @include regularButton(
+        var($primary-400),
+        var($primary-100),
+        var($white),
+        var($primary-500)
+    );
+}
+
+.accent_icon {
+    @include iconButton(
+        attr(data-icon),
+        var($primary-400),
+        var($primary-100),
+        var($white),
+        var($primary-500)
+    );
+}
+
+.accent_text_icon {
+    @include textIconButton(
+        attr(data-icon),
+        var($primary-400),
+        var($primary-200),
+        var($primary-100),
+        var($white),
+        var($primary-500)
+    );
+}

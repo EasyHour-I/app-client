@@ -1,0 +1,56 @@
+import React from 'react';
+import styles from './Button.module.scss';
+import './Button.module.scss';
+import cn from 'classnames';
+
+export interface ButtonProps
+    extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+    text: string;
+    icon?: string;
+    color?: string;
+    size?: string;
+    childred?: React.ReactNode;
+}
+
+const buttonTypes: { [key: string]: string } = {
+    primary: styles.primary,
+    primaryIcon: styles.primary_icon,
+    primaryTextIcon: styles.primary_text_icon,
+    secondary: styles.secondary,
+    secondaryIcon: styles.secondary_icon,
+    secondaryTextIcon: styles.secondary_text_icon,
+    accent: styles.accent,
+    accentIcon: styles.accent_icon,
+    accentTextIcon: styles.accent_text_icon,
+};
+
+export const Button: React.FC<ButtonProps> = ({
+    text,
+    icon,
+    className,
+    color,
+    size,
+    childred,
+    ...props
+}: ButtonProps) => {
+    const buttonType = `${color || 'primary'}${
+        text && icon ? 'TextIcon' : icon ? 'Icon' : ''
+    }`;
+
+    const buttonSize = size === 'small' ? styles.small : '';
+
+    return (
+        <button
+            className={cn(buttonTypes[buttonType], className, buttonSize)}
+            {...props}
+        >
+            {icon && (
+                <span
+                    className="material-symbols-rounded"
+                    data-icon={icon}
+                ></span>
+            )}
+            {childred ?? text}
+        </button>
+    );
+};
