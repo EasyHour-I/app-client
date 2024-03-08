@@ -9,6 +9,7 @@ export interface ButtonProps
     icon?: string;
     color?: string;
     size?: string;
+    stretch?: boolean;
     childred?: React.ReactNode;
 }
 
@@ -30,6 +31,7 @@ export const Button: React.FC<ButtonProps> = ({
     className,
     color,
     size,
+    stretch,
     childred,
     ...props
 }: ButtonProps) => {
@@ -39,9 +41,16 @@ export const Button: React.FC<ButtonProps> = ({
 
     const buttonSize = size === 'small' ? styles.small : '';
 
+    const buttonStretch = stretch ? styles.stretch : '';
+
     return (
         <button
-            className={cn(buttonTypes[buttonType], className, buttonSize)}
+            className={cn(
+                buttonTypes[buttonType],
+                className,
+                buttonSize,
+                buttonStretch
+            )}
             {...props}
         >
             {icon && (

@@ -4,11 +4,12 @@
     border: none;
     border-radius: 5px;
     font-size: 1rem;
+    text-align: center;
     cursor: pointer;
 
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: center;
     padding: 1rem 4rem;
 
     background-color: $bg-color;
@@ -179,4 +180,8 @@
         var($white),
         var($primary-500)
     );
+}
+
+.stretch {
+    width: 100%;
 }
