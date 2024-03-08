@@ -8,7 +8,7 @@ export interface ButtonProps
     text: string;
     icon?: string;
     color?: string;
-    size?: string;
+    size?: 'small' | 'big';
     stretch?: boolean;
     childred?: React.ReactNode;
 }
