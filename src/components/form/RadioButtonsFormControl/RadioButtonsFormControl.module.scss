@@ -1,0 +1,85 @@
+@import 'src/styles/variables-keys';
+
+.radio {
+    -webkit-appearance: none;
+    appearance: none;
+
+    position: relative;
+
+    $size: 1.5rem;
+    width: $size;
+    height: $size;
+
+    border: 1px solid var($netural-300);
+    border-radius: 50%;
+
+    transition: 0.25s background-color, 0.25s border-color;
+
+    &::after {
+        $inner-size: calc($size / 3);
+
+        content: '';
+
+        width: $inner-size;
+        height: $inner-size;
+
+        background-color: var($white);
+        border-radius: 50%;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        display: none;
+    }
+
+    &:checked {
+        background-color: var($primary-500);
+        border-color: var($primary-500);
+
+        &::after {
+            display: block;
+        }
+
+        &:hover {
+            background-color: var($primary-600);
+            border-color: var($primary-600);
+        }
+
+        &:disabled {
+            background-color: var($primary-300);
+            border-color: var($primary-300);
+
+            &:hover {
+                background-color: var($primary-300);
+                border-color: var($primary-300);
+            }
+        }
+    }
+
+    &:hover {
+        background-color: var($primary-100);
+    }
+
+    &:disabled {
+        border-color: var($netural-200);
+        background-color: var($netural-100);
+    }
+
+    .error {
+        border-color: var($error-500);
+    }
+}
+
+.radio__container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    width: 100%;
+
+    & > label {
+        color: var($netural-600);
+    }
+}
