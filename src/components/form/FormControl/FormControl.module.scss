@@ -1,0 +1,28 @@
+@import 'src/styles/variables-keys';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    & > label {
+        font-weight: 600;
+    }
+
+    & > span {
+        color: var($error-500);
+        text-align: end;
+        font-size: 0.9rem;
+    }
+}
+
+.required {
+    position: relative;
+
+    &::after {
+        position: absolute;
+        color: var($error-500);
+        content: '*';
+        padding-inline-start: 0.125rem;
+    }
+}
