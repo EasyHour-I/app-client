@@ -24,7 +24,7 @@
 }
 
 @mixin icon($icon, $color) {
-    > span::after {
+    & > span::after {
         font-size: 2rem;
         content: $icon;
         color: $color;
