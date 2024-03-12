@@ -22,7 +22,7 @@ export const FormControl: React.FC<PropsWithChildren<FormControlProps>> = ({
     return (
         <div className={cn(styles.container, className)}>
             <label className={required ? styles.required : ''}>{label}</label>
-            {children}
+            <div className={styles.children__container}>{children}</div>
             {errors?.[name] && <span>{errors[name]?.message as string}</span>}
             <span>Error text</span>
         </div>
