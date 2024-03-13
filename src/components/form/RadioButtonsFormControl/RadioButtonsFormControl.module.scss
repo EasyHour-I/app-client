@@ -67,7 +67,7 @@
         background-color: var($netural-100);
     }
 
-    .error {
+    &.error {
         border-color: var($error-500);
     }
 }

@@ -1,6 +1,7 @@
 import { UseFormRegister, FieldValues } from 'react-hook-form';
 import { FormControl, FormControlProps } from '../FormControl';
 import styles from './CheckboxFormControl.module.scss';
+import cn from 'classnames';
 
 export interface CheckboxOption {
     label: string;
@@ -26,15 +27,20 @@ export const CheckboxFormControl: React.FC<CheckboxFormControlProps> = ({
                 <div className={styles.checkbox__container}>
                     <input
                         type="checkbox"
-                        className={
-                            type == 'checkbox' ? styles.checkbox : styles.switch
-                        }
-                        id={option.label}
+                        className={cn(
+                            type == 'checkbox'
+                                ? styles.checkbox
+                                : styles.switch,
+                            props.errors && styles.error
+                        )}
+                        id={option.value as string}
                         value={option.value}
                         {...register(props.name)}
                         defaultChecked={option.checked}
                     />
-                    <label htmlFor={option.label}>{option.label}</label>
+                    <label htmlFor={option.value as string}>
+                        {option.label}
+                    </label>
                 </div>
             ))}
         </FormControl>

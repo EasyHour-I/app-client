@@ -1,6 +1,7 @@
 import { UseFormRegister, FieldValues } from 'react-hook-form';
 import { FormControl, FormControlProps } from '../FormControl';
 import styles from './RadioButtonsFormControl.module.scss';
+import cn from 'classnames';
 
 export interface RadioOption {
     label: string;
@@ -21,12 +22,17 @@ export const RadioButtonsFormControl: React.FC<
                 <div className={styles.radio__container}>
                     <input
                         type="radio"
-                        className={styles.radio}
-                        id={option.label}
+                        className={cn(
+                            styles.radio,
+                            props.errors && styles.error
+                        )}
+                        id={option.value as string}
                         value={option.value}
                         {...register(props.name)}
                     />
-                    <label htmlFor={option.label}>{option.label}</label>
+                    <label htmlFor={option.value as string}>
+                        {option.label}
+                    </label>
                 </div>
             ))}
         </FormControl>
