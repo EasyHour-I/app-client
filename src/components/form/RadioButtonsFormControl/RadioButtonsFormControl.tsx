@@ -17,7 +17,7 @@ export const RadioButtonsFormControl: React.FC<
     RadioButtonsFormControlProps
 > = ({ options, register, ...props }) => {
     return (
-        <FormControl {...props}>
+        <FormControl marginTo="children" {...props}>
             {options.map((option) => (
                 <div className={styles.radio__container}>
                     <input
