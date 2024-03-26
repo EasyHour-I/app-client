@@ -1,0 +1,34 @@
+@import 'src/styles/variables-keys';
+
+.textarea {
+    resize: none;
+
+    padding: 1rem;
+    width: 18rem;
+
+    border: var($netural-300) 1px solid;
+    border-radius: var($border-radius);
+
+    color: var($netural-500);
+
+    &:focus {
+        border-color: var($netural-600);
+        outline: none;
+    }
+
+    &:disabled {
+        border-color: var($netural-200);
+        color: var($netural-200);
+        background-color: var($white);
+    }
+
+    &:read-only {
+        border-color: var($netural-200);
+        color: var($netural-300);
+        background-color: var($white);
+    }
+}
+
+.error {
+    border-color: var($error-500);
+}
