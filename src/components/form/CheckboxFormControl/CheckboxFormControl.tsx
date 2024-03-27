@@ -24,7 +24,7 @@ export const CheckboxFormControl: React.FC<CheckboxFormControlProps> = ({
     return (
         <FormControl marginTo="children" {...props}>
             {options.map((option) => (
-                <div className={styles.checkbox__container}>
+                <div className={styles.checkbox__container} key={option.value}>
                     <input
                         type="checkbox"
                         className={cn(
