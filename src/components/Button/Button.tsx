@@ -8,6 +8,7 @@ export interface ButtonProps
     text: string;
     icon?: string;
     color?: 'primary' | 'secondary' | 'accent';
+    transparent?: boolean;
     size?: 'small' | 'big';
     stretch?: boolean;
     childred?: React.ReactNode;
@@ -30,6 +31,7 @@ export const Button: React.FC<ButtonProps> = ({
     icon,
     className,
     color,
+    transparent,
     size,
     stretch,
     childred,
@@ -47,9 +49,10 @@ export const Button: React.FC<ButtonProps> = ({
         <button
             className={cn(
                 buttonTypes[buttonType],
-                className,
                 buttonSize,
-                buttonStretch
+                buttonStretch,
+                transparent && styles.transparent,
+                className
             )}
             {...props}
         >

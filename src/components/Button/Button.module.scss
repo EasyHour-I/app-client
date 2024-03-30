@@ -28,6 +28,7 @@
         font-size: 2rem;
         content: $icon;
         color: $color;
+        background: transparent;
 
         transition: color 0.25s;
     }
@@ -185,4 +186,8 @@
 
 .stretch {
     width: 100%;
+}
+
+.transparent {
+    background: transparent;
 }
