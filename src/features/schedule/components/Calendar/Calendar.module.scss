@@ -1,0 +1,31 @@
+@import 'src/styles/variables-keys';
+
+$eventColor: var(--primary-100);
+
+.calendar_container {
+    height: 100%;
+    width: 100%;
+}
+
+.event_data {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    margin: 0.5rem 1rem;
+
+    & .title {
+        font-weight: 600;
+        font-size: 0.95rem;
+        margin: 0;
+        color: var($primary-900);
+    }
+
+    & .time {
+        margin: 0;
+        font-size: 0.8rem;
+        color: var($netural-600);
+    }
+}
