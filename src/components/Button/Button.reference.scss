@@ -1,0 +1,97 @@
+@import 'src/styles/variables-keys';
+
+@mixin button($bg-color, $color) {
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 4rem;
+
+    background-color: $bg-color;
+    color: $color;
+
+    transition: color 0.25s, background-color 0.25s;
+
+    &.small {
+        padding: 0.5rem 1rem;
+    }
+}
+
+@mixin icon($icon, $color) {
+    & > span::after {
+        font-size: 2rem;
+        content: $icon;
+        color: $color;
+        background: transparent;
+
+        transition: color 0.25s;
+    }
+
+    &.small > span::after {
+        font-size: 1.5rem;
+    }
+}
+
+@mixin regularButton(
+    $bg-color,
+    $color,
+    $bg-hover: $bg-color,
+    $color-hover: $color
+) {
+    @include button($bg-color, $color);
+
+    &:hover {
+        background-color: $bg-hover;
+        color: $color-hover;
+    }
+}
+
+@mixin iconButton(
+    $icon,
+    $bg-color,
+    $color,
+    $bg-hover: $bg-color,
+    $color-hover: $color
+) {
+    @include button($bg-color, $color);
+    @include icon($icon, $color);
+
+    padding: 0.75rem;
+
+    &.small {
+        padding: 0.5rem;
+    }
+
+    &:hover {
+        background-color: $bg-hover;
+
+        @include icon($icon, $color-hover);
+    }
+}
+
+@mixin textIconButton(
+    $icon,
+    $bg-color,
+    $color,
+    $icon-color,
+    $bg-hover: $bg-color,
+    $color-hover: $color
+) {
+    @include button($bg-color, $color);
+    @include icon($icon, $icon-color);
+
+    padding: 0.75rem 3.5rem;
+
+    &:hover {
+        background-color: $bg-hover;
+        color: $color-hover;
+
+        @include icon($icon, $color-hover);
+    }
+}
