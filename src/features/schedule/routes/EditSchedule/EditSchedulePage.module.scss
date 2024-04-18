@@ -1,0 +1,13 @@
+@import '/src/styles/variables-keys.scss';
+
+.container {
+    width: 90rem;
+    display: flex;
+    gap: 4rem;
+    height: 40rem;
+}
+
+.calendar_container {
+    height: 100%;
+    width: 100%;
+}
