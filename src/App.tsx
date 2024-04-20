@@ -1,14 +1,10 @@
 import './App.scss';
-import { Button } from './components/Button';
+import { Routers } from './routes';
 
 function App() {
     return (
         <>
-            <Button
-                text="primary-icon"
-                color="primary"
-                icon="settings"
-            ></Button>
+            <Routers />
         </>
     );
 }
