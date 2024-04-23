@@ -1,5 +1,5 @@
 export const NAVIGATION_ROUTES = {
-    home: '',
+    overview: '',
 
     schedule: 'schedule',
 };
