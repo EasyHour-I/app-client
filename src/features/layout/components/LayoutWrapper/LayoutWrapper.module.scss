@@ -1,0 +1,20 @@
+@import '/src/styles/variables-keys.scss';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    height: 100%;
+    width: 100%;
+
+    & > h1 {
+        color: var($primary-500);
+
+        font-size: 2rem;
+    }
+}
+
+.page_wrapper {
+    width: 100%;
+    height: calc(100% - 8rem);
+}
