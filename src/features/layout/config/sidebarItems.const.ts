@@ -5,7 +5,7 @@ import { NAVIGATION_ROUTES } from '@/config/routes-navigation.const';
 const overview: SidebarItem = {
     text: 'Overview',
     icon: 'home',
-    url: `/`,
+    url: `/${NAVIGATION_ROUTES.overview}`,
 };
 
 const schedule: SidebarItem = {
