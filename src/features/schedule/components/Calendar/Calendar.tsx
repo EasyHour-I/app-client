@@ -49,7 +49,7 @@ export const Calendar: React.FC<CalendarProps> = ({ editable, events }) => {
                 height="100%"
                 editable={editable}
                 droppable={editable}
-                eventClick={handleEventClick}
+                eventClick={editable ? handleEventClick : undefined}
                 expandRows
                 eventDurationEditable={false}
                 events={events}
