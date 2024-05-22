@@ -13,7 +13,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ items }) => {
         <aside className={styles.sidebar}>
             <div className={styles.container}>
                 <div className={styles.logo_container}>
-                    <img src="/public/skedo_logo.svg" alt="skedo logo" />
+                    <img src="/skedo_logo.svg" alt="skedo logo" />
                 </div>
                 <div className={styles.links_container}>
                     {items.map((item) => (
@@ -33,10 +33,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ items }) => {
                 </div>
                 <div className={styles.settings_container}>
                     <div className={styles.user_data_container}>
-                        <img
-                            src="/public/skedo_logo.svg"
-                            alt="profile picture"
-                        />
+                        <img src="/skedo_logo.svg" alt="profile picture" />
                         <div>
                             <p className={styles.name}>Username</p>
                             <p className={styles.role}>Role</p>
