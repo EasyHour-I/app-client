@@ -41,7 +41,6 @@ export const DraggableEvents: React.FC<DraggableEventsProps> = ({ events }) => {
                 >
                     <div>
                         <p className={styles.event_title}>{event.title}</p>
-                        <p className={styles.event_desc}>{event.description}</p>
                     </div>
                     <div className={styles.event_data}>
                         <p>

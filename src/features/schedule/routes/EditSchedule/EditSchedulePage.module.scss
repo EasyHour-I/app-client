@@ -1,7 +1,7 @@
 @import '/src/styles/variables-keys.scss';
 
 .page_container {
-    height: calc(100% - 6rem);
+    height: 100%;
     display: flex;
     gap: 1rem;
 }
@@ -40,6 +40,6 @@
 }
 
 .scrollable {
-    overflow: auto;
+    overflow-y: auto;
     direction: rtl;
 }

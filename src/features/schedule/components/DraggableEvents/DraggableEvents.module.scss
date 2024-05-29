@@ -16,7 +16,6 @@
     cursor: pointer;
 
     padding: 1rem;
-    min-height: 7rem;
 
     display: flex;
     flex-direction: column;
@@ -25,11 +24,6 @@
 
     &_title {
         font-weight: 600;
-    }
-
-    &_desc {
-        font-size: 0.9rem;
-        color: var($netural-600);
     }
 
     & p {
