@@ -14,4 +14,10 @@ const schedule: SidebarItem = {
     url: `/${NAVIGATION_ROUTES.schedule}`,
 };
 
-export const sidebarItems: SidebarItem[] = [overview, schedule];
+const groups: SidebarItem = {
+    text: 'Groups',
+    icon: 'groups',
+    url: `/${NAVIGATION_ROUTES.groups}`,
+};
+
+export const sidebarItems: SidebarItem[] = [overview, schedule, groups];

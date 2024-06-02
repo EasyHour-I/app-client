@@ -5,6 +5,7 @@ import { NAVIGATION_ROUTES } from '../config/routes-navigation.const';
 import { ScheduleView } from '../features/schedule/routes/ScheduleView';
 import { ProtectedLauout } from '../features/layout/components/ProtectedLayout';
 import { OverviewPage } from '@/features/overview';
+import { GroupsView } from '@/features/groups';
 
 export const Routers: React.FC = () => {
     return (
@@ -18,6 +19,10 @@ export const Routers: React.FC = () => {
                     <Route
                         path={`/${NAVIGATION_ROUTES.schedule}/*`}
                         element={<ScheduleView />}
+                    />
+                    <Route
+                        path={`/${NAVIGATION_ROUTES.groups}/*`}
+                        element={<GroupsView />}
                     />
                 </Route>
             </Routes>
