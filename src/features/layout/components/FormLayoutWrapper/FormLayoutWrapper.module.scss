@@ -1,0 +1,18 @@
+@import '/src/styles/variables-keys.scss';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+    width: 100%;
+}
+
+.page_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    height: calc(100% - 6rem);
+}
