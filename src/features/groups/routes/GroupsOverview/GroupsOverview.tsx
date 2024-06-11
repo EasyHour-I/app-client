@@ -6,6 +6,8 @@ import { Button } from '@/components/Button';
 import { Group } from '../../types/group';
 
 import styles from './GroupsOverview.module.scss';
+import { Link } from 'react-router-dom';
+import { NAVIGATION_ROUTES } from '@/config/routes-navigation.const';
 
 export const GroupsOverview: React.FC = () => {
     const [groups, setGroups] = useState<Group[]>([
@@ -45,13 +47,18 @@ export const GroupsOverview: React.FC = () => {
                                 </p>
                             </div>
                             <div className={styles.buttons_container}>
-                                <Button
-                                    text=""
-                                    icon="edit"
-                                    size="small"
-                                    color="secondary"
-                                    transparent
-                                />
+                                <Link
+                                    to={`${NAVIGATION_ROUTES.groups.edit}/${group.id}`}
+                                >
+                                    <Button
+                                        text=""
+                                        icon="edit"
+                                        size="small"
+                                        color="secondary"
+                                        transparent
+                                    />
+                                </Link>
+
                                 <Button
                                     text=""
                                     icon="delete"
