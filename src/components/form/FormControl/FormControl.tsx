@@ -40,7 +40,6 @@ export const FormControl: React.FC<PropsWithChildren<FormControlProps>> = ({
                 {children}
             </div>
             {errors?.[name] && <span>{errors[name]?.message as string}</span>}
-            <span>Error text</span>
         </div>
     );
 };
