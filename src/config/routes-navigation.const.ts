@@ -2,5 +2,8 @@ export const NAVIGATION_ROUTES = {
     overview: '',
 
     schedule: 'schedule',
-    groups: 'groups',
+    groups: {
+        base: 'groups',
+        edit: 'edit',
+    },
 };

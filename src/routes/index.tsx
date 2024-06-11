@@ -21,7 +21,7 @@ export const Routers: React.FC = () => {
                         element={<ScheduleView />}
                     />
                     <Route
-                        path={`/${NAVIGATION_ROUTES.groups}/*`}
+                        path={`/${NAVIGATION_ROUTES.groups.base}/*`}
                         element={<GroupsView />}
                     />
                 </Route>

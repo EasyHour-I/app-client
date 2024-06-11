@@ -17,7 +17,7 @@ const schedule: SidebarItem = {
 const groups: SidebarItem = {
     text: 'Groups',
     icon: 'groups',
-    url: `/${NAVIGATION_ROUTES.groups}`,
+    url: `/${NAVIGATION_ROUTES.groups.base}`,
 };
 
 export const sidebarItems: SidebarItem[] = [overview, schedule, groups];
