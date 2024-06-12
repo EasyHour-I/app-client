@@ -1,7 +1,9 @@
+import cn from 'classnames';
+
 import { FieldValues, UseFormRegister } from 'react-hook-form';
 import { FormControl, FormControlProps } from '../FormControl';
+
 import styles from './InputFormControl.module.scss';
-import cn from 'classnames';
 
 export interface InputFormControlProps
     extends Omit<FormControlProps, 'marginTo'> {
@@ -11,6 +13,7 @@ export interface InputFormControlProps
     maxLength?: number;
     readonly?: boolean;
     disabled?: boolean;
+    stretch?: boolean;
 }
 
 export const InputFormControl: React.FC<InputFormControlProps> = ({
@@ -20,13 +23,14 @@ export const InputFormControl: React.FC<InputFormControlProps> = ({
     readonly,
     maxLength,
     disabled,
+    stretch,
     ...props
 }) => {
     return (
         <FormControl marginTo="label" {...props}>
             <input
                 {...register(props.name)}
-                className={cn(styles.input)}
+                className={cn(styles.input, stretch && styles.stretch)}
                 name={props.name}
                 type={type}
                 id={id}

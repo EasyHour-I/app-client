@@ -30,3 +30,7 @@
 .error {
     border-color: var($error-500);
 }
+
+.stretch {
+    width: calc(100% - 2rem);
+}
