@@ -8,7 +8,7 @@ import styles from './InputFormControl.module.scss';
 export interface InputFormControlProps
     extends Omit<FormControlProps, 'marginTo'> {
     id: string;
-    type?: 'text' | 'password' | 'email' | 'url';
+    type?: 'text' | 'password' | 'email' | 'url' | 'number' | 'time';
     register: UseFormRegister<FieldValues>;
     maxLength?: number;
     readonly?: boolean;
