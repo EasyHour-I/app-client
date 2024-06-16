@@ -14,7 +14,7 @@ export const EditSchedulePage: React.FC = () => {
             <div className={styles.page_container}>
                 <div className={styles.section_container}>
                     <div className={styles.button_container}>
-                        <Link to={`/${NAVIGATION_ROUTES.groups}`}>
+                        <Link to={`/${NAVIGATION_ROUTES.groups.base}`}>
                             <Button
                                 text="Manage Groups"
                                 icon="groups"
