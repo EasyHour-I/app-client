@@ -1,1 +1,15 @@
 @import '/src/styles/variables-keys.scss';
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+
+    width: 50rem;
+}
+
+.row_inputs_container {
+    display: flex;
+    justify-content: space-between;
+}
