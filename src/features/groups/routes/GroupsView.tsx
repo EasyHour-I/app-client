@@ -3,7 +3,7 @@ import { Outlet, Route, Routes } from 'react-router-dom';
 import { NAVIGATION_ROUTES } from '@/config/routes-navigation.const';
 
 import { GroupsOverview } from './GroupsOverview/GroupsOverview';
-import { EditGroup } from './EditGroup/EditGroup';
+import { GroupForm } from './EditGroup/GroupForm';
 
 export const GroupsView: React.FC = () => (
     <>
@@ -18,7 +18,11 @@ export const GroupsViewRoutes = () => (
             <Route path="/" element={<GroupsOverview />} />
             <Route
                 path={`/${NAVIGATION_ROUTES.groups.edit}/:groupId`}
-                element={<EditGroup />}
+                element={<GroupForm type="edit" />}
+            />
+            <Route
+                path={`/${NAVIGATION_ROUTES.groups.create}/:groupId`}
+                element={<GroupForm type="create" />}
             />
         </Routes>
     </>

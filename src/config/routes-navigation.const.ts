@@ -5,5 +5,6 @@ export const NAVIGATION_ROUTES = {
     groups: {
         base: 'groups',
         edit: 'edit',
+        create: 'create',
     },
 };

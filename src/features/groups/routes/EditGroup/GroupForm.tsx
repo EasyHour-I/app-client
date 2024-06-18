@@ -7,7 +7,11 @@ import { Button } from '@/components/Button';
 
 import styles from './EditGroup.module.scss';
 
-export const EditGroup: React.FC = () => {
+export interface GroupFormProps {
+    type: 'create' | 'edit';
+}
+
+export const GroupForm: React.FC<GroupFormProps> = ({ type }) => {
     const {
         register,
         handleSubmit,
@@ -18,7 +22,11 @@ export const EditGroup: React.FC = () => {
 
     const onSubmit: SubmitHandler<object> = (data: object) => {
         console.log('submit data', data);
-        console.log(groupId);
+        if (type === 'create') {
+            console.log('create');
+            return;
+        }
+        console.log(`edit - ${groupId}`);
     };
 
     return (
